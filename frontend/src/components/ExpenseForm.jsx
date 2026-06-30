@@ -26,8 +26,8 @@ const ExpenseForm = ({ onExpenseAdded, expenseToEdit, clearEdit }) => {
     try {
       const method = expenseToEdit ? 'PUT' : 'POST';
       const url = expenseToEdit
-        ? `http://localhost:5000/api/expenses/${expenseToEdit._id}`
-        : 'http://localhost:5000/api/expenses';
+        ? `/api/expenses/${expenseToEdit._id}`
+        : '/api/expenses';
       const res = await fetch(url, {
         method: method,
         headers: {
