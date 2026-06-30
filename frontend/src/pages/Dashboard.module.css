@@ -1,0 +1,486 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f6;
+    /* This color will now apply to the whole site */
+    font-family: 'Inter', sans-serif;
+    /* A nice modern font for a dashboard */
+}
+
+.dashboardContainer {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: 'Inter', sans-serif;
+    background-color: #f4f7f6;
+    min-height: 100vh;
+}
+
+.headerRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.logoutBtn {
+    padding: 10px 20px;
+    background-color: #ef4444;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.logoutBtn:hover {
+    background-color: #dc2626;
+}
+
+.rightColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    /* Change this from 24px (or whatever it is) to 12px or 8px */
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 24px;
+}
+
+@media (max-width: 900px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px -2px rgba(0, 0, 0, 0.1);
+}
+
+/* --- PREMIUM AI ADVISOR STYLES --- */
+.aiCard {
+    /* A soft, premium violet gradient to signal "AI" */
+    background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%);
+    border: 1px solid #e9d5ff;
+    position: relative;
+    overflow: hidden;
+}
+
+/* --- PREMIUM AI ADVISOR STYLES --- */
+.aiCard {
+    background: linear-gradient(135deg, #f8f5ff 0%, #f3e8ff 100%);
+    border: 1px solid #e9d5ff;
+    border-radius: 16px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    position: relative;
+    overflow: hidden;
+}
+
+.aiHeader {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+    font-weight: 800;
+    color: #4c1d95;
+    margin: 0;
+}
+
+.aiDescription {
+    font-size: 14px;
+    color: #6b7280;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.aiButton {
+    background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
+    color: white;
+    border: none;
+    padding: 14px 20px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(109, 40, 217, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.aiButton:hover:not(:disabled) {
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, #9368f7 0%, #5b21b6 100%);
+    box-shadow: 0 8px 25px rgba(109, 40, 217, 0.4);
+}
+
+.aiButton:disabled {
+    background: #9ca3af;
+    box-shadow: none;
+    cursor: not-allowed;
+    animation: pulse 1.5s infinite;
+}
+
+.aiResult {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-left: 4px solid #8b5cf6;
+    padding: 16px;
+    border-radius: 12px;
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.6;
+    font-style: italic;
+    margin-top: 4px;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.7;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.statItem {
+    margin: 15px 0;
+    padding: 10px;
+    background: #f1f5f9;
+    border-radius: 8px;
+}
+
+/* --- BUDGET PROGRESS BAR STYLES --- */
+.budgetSection {
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.budgetHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.budgetLabel {
+    font-size: 14px;
+    font-weight: 700;
+    color: #475569;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.editBudgetBtn {
+    background: #2563eb;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 12px;
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.editBudgetBtn:hover {
+    transform: translateY(-2px);
+    background: #4491f6;
+    box-shadow: 0 4px 10px rgba(22, 51, 97, 0.2);
+}
+
+.progressBarContainer {
+    height: 12px;
+    background-color: #e2e8f0;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progressBarFill {
+    height: 100%;
+    border-radius: 20px;
+    transition: width 0.5s ease-in-out, background-color 0.3s ease;
+}
+
+.budgetStats {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+    font-size: 13px;
+    color: #64748b;
+    font-weight: 500;
+}
+
+.budgetInputContainer {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.budgetInput {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+}
+
+.budgetSaveBtn {
+    background-color: #10b981;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 0 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* --- DROP DOWN & CUSTOM DATE STYLES --- */
+.headerWithFilter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.dateSelect {
+    padding: 8px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #1e293b;
+    background-color: #f8fafc;
+    outline: none;
+    cursor: pointer;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.dateSelect:focus {
+    border-color: #3b82f6;
+}
+
+.customDateBox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #f8fafc;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #475569;
+}
+
+.dateInput {
+    padding: 6px 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    outline: none;
+    font-family: inherit;
+}
+
+/* --- SEARCH BAR STYLES --- */
+.searchContainer {
+    margin-bottom: 16px;
+    position: relative;
+}
+
+.searchInput {
+    width: 100%;
+    padding: 10px 14px 10px 36px;
+    /* Extra left padding for the icon */
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    background-color: #f8fafc;
+    color: #1e293b;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+}
+
+.searchInput:focus {
+    border-color: #3b82f6;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.searchIcon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #94a3b8;
+    width: 16px;
+    height: 16px;
+    pointer-events: none;
+    /* Prevents the icon from blocking clicks */
+}
+
+.editExpBtn {
+    background: transparent;
+    color: #94a3b8;
+    border: none;
+    border-radius: 6px;
+    padding: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.editExpBtn:hover {
+    color: rgb(47, 92, 227);
+    background: rgb(187, 230, 255);
+}
+
+.exportBtn {
+    background: #f1f5f9;
+    color: #475569;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.exportBtn:hover {
+    background: #e2e8f0;
+    color: #1e293b;
+    border-color: #94a3b8;
+}
+
+/* --- MONTHLY COMPARISON STYLES --- */
+.comparisonSection {
+    background: #f8fafc;
+    border-radius: 12px;
+    padding: 16px;
+}
+
+.compRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.compCol {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.compLabel {
+    font-size: 13px;
+    color: #64748b;
+    font-weight: 500;
+}
+
+.compValue {
+    font-size: 16px;
+    color: #1e293b;
+}
+
+.compBadge {
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.compCatList {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.compCatRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 8px;
+}
+
+.compCatRow:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.compCatName {
+    font-size: 14px;
+    font-weight: 500;
+    color: #334155;
+}
+
+/* --- ADVANCED ANALYTICS STYLES --- */
+.analyticsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 12px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.analyticsCard {
+    background: #f8fafc;
+    border-radius: 8px;
+    padding: 12px;
+    border: 1px solid #e2e8f0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.analyticsTitle {
+    font-size: 12px;
+    color: #64748b;
+    font-weight: 500;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.analyticsValue {
+    font-size: 16px;
+    font-weight: 600;
+    color: #0f172a;
+}
+
