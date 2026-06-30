@@ -34,7 +34,7 @@ You will need Node.js and MongoDB installed on your system. You also need an API
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/wealthwise.git
+   git clone https://github.com/revanthp2313-star/WealthWise-Finance-Dash
    cd wealthwise
    ```
 
